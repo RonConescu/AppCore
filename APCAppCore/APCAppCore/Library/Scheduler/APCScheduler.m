@@ -1688,14 +1688,17 @@ static NSString * const kQueueName = @"APCScheduler CoreData query queue";
 
 - (BOOL) isServerDisabled
 {
-    APCAppDelegate *app = [APCAppDelegate sharedAppDelegate];
-    BOOL result = app.dataSubstrate.parameters.bypassServer;
+    
+//        APCAppDelegate *app = [APCAppDelegate sharedAppDelegate];
+//        BOOL result = app.dataSubstrate.parameters.bypassServer;
+//
+//    #if DEVELOPMENT
+//        result = YES;
+//    #endif
+//
+//        return result;
 
-#if DEVELOPMENT
-    result = YES;
-#endif
-
-    return result;
+    return YES;
 }
 
 

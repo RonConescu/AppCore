@@ -52,6 +52,13 @@
 #import "NSDictionary+APCAdditions.h"
 
 
+/**
+ Controls whether a debug button appears in the ViewController's navigation
+ area.  Only works if we're in DEBUG mode.  The idea:  make this button do
+ anything you like, during testing.  See -installDebugButtonIfAppropriate.
+ */
+static BOOL const kShowDebugButton = YES;
+
 static CGFloat const kTintedCellHeight             = 65;
 static CGFloat const kTableViewSectionHeaderHeight = 77;
 
@@ -98,6 +105,8 @@ static CGFloat const kTableViewSectionHeaderHeight = 77;
     self.dateFormatter = [NSDateFormatter new];
     [self configureRefreshControl];
     self.lastKnownSystemDate = nil;
+
+    [self installDebugButtonIfAppropriate];
 }
 
 - (void) viewWillAppear: (BOOL) animated
@@ -685,5 +694,42 @@ static CGFloat const kTableViewSectionHeaderHeight = 77;
 
     return activitiesTab;
 }
+
+
+
+// ---------------------------------------------------------
+#pragma mark - Debugging
+// ---------------------------------------------------------
+
+- (void) installDebugButtonIfAppropriate
+{
+#if DEBUG
+    if (kShowDebugButton)
+    {
+        UIBarButtonItem *debugButton = [[UIBarButtonItem alloc] initWithTitle: @"FakeServer"
+                                                                        style: UIBarButtonItemStylePlain
+                                                                       target: self
+                                                                       action: @selector (loadFakeServerFile)];
+
+        [[self navigationItem] setRightBarButtonItem: debugButton];
+    }
+#endif
+}
+
+- (void) loadFakeServerFile
+{
+    // For the purpose of this test, and for the lifetime of the app in RAM (and maybe longer), stop talking to the server.
+    self.appDelegate.dataSubstrate.parameters.bypassServer = YES;
+
+    [[APCScheduler defaultScheduler] loadTasksAndSchedulesFromDiskFileNamed: @"APHTasksAndSchedules_FakeFromServer.json"
+                                                                   inBundle: nil
+                                                            assigningSource: APCScheduleSourceServer
+                                                        andThenUseThisQueue: [NSOperationQueue mainQueue]
+                                                           toDoThisWhenDone:^(NSError * __unused errorFetchingOrLoading)
+     {
+         [self reloadTasksFromCoreData];
+     }];
+}
+
 
 @end

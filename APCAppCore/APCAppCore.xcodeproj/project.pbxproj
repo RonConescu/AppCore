@@ -71,6 +71,7 @@
 		08EA2AB31A7AD564007549C0 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EA2AB11A7AD564007549C0 /* UIImage+ImageEffects.h */; };
 		08EA2AB41A7AD564007549C0 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EA2AB21A7AD564007549C0 /* UIImage+ImageEffects.m */; };
 		360C63D11A339746002EC86C /* NSDateComponentsHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 360C63D01A339746002EC86C /* NSDateComponentsHelperTests.m */; };
+		36150FF01B5EC29B00660CA5 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36150FEF1B5EC29B00660CA5 /* ResearchKit.framework */; };
 		36257FBD1AA714B60060B95A /* CMMotionActivity+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 36257FBB1AA714B60060B95A /* CMMotionActivity+Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36257FBE1AA714B60060B95A /* CMMotionActivity+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36257FBC1AA714B60060B95A /* CMMotionActivity+Helper.m */; };
 		3627D3481A9A7517006B02E8 /* APCMedTrackerMedication.h in Headers */ = {isa = PBXBuildFile; fileRef = 3627D3461A9A7517006B02E8 /* APCMedTrackerMedication.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -292,7 +293,6 @@
 		7423AB5B1AA3FFD8004A325A /* APCConsentRedirector.h in Headers */ = {isa = PBXBuildFile; fileRef = 7423AB591AA3FFD8004A325A /* APCConsentRedirector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74423B531AD981F8008AC7B3 /* APCCMS.m in Sources */ = {isa = PBXBuildFile; fileRef = 369DD5561AC0E26900327729 /* APCCMS.m */; };
 		747307101A96E1DE0071D863 /* APCCMS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7473070E1A96E1DE0071D863 /* APCCMS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		747FB1451ABDDFAE00345000 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 747FB1441ABDDFAE00345000 /* ResearchKit.framework */; };
 		7B07B8AE1ACDD7B400734558 /* APCHealthKitBackgroundDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B07B8AA1ACDD7B400734558 /* APCHealthKitBackgroundDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B07B8AF1ACDD7B400734558 /* APCHealthKitBackgroundDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B07B8AB1ACDD7B400734558 /* APCHealthKitBackgroundDataCollector.m */; };
 		7B362C061B02A34500127051 /* APCDataArchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B362C041B02A34500127051 /* APCDataArchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -842,6 +842,7 @@
 		08EA2AB11A7AD564007549C0 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		08EA2AB21A7AD564007549C0 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		360C63D01A339746002EC86C /* NSDateComponentsHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateComponentsHelperTests.m; sourceTree = "<group>"; };
+		36150FEF1B5EC29B00660CA5 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = "../../researchkit/build/Release-iphoneos/ResearchKit.framework"; sourceTree = "<group>"; };
 		3624092A1A8181350005B1A7 /* get_debug_ip_address.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_debug_ip_address.sh; sourceTree = "<group>"; };
 		36257FBB1AA714B60060B95A /* CMMotionActivity+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMotionActivity+Helper.h"; sourceTree = "<group>"; };
 		36257FBC1AA714B60060B95A /* CMMotionActivity+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMotionActivity+Helper.m"; sourceTree = "<group>"; };
@@ -1546,7 +1547,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747FB1451ABDDFAE00345000 /* ResearchKit.framework in Frameworks */,
+				36150FF01B5EC29B00660CA5 /* ResearchKit.framework in Frameworks */,
 				5B5523AA1AC915140068B51D /* Social.framework in Frameworks */,
 				F5B948171A7328F30034C522 /* ImageIO.framework in Frameworks */,
 				F55653B31A6F0918003E0B0C /* libMobileGestalt.dylib in Frameworks */,
@@ -3166,6 +3167,7 @@
 		F5F12B211A2F85FF0015982C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36150FEF1B5EC29B00660CA5 /* ResearchKit.framework */,
 				747FB1441ABDDFAE00345000 /* ResearchKit.framework */,
 				5B5523A91AC915140068B51D /* Social.framework */,
 				F5B948161A7328F30034C522 /* ImageIO.framework */,
@@ -4147,7 +4149,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ron.conescu/Projects/AppleHealthStuff/code/Cardio/applecardiology/researchkit/build/Release-iphoneos",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/APCAppCore/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4173,7 +4178,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ron.conescu/Projects/AppleHealthStuff/code/Cardio/applecardiology/researchkit/build/Release-iphoneos",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/APCAppCore/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -4279,7 +4287,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ron.conescu/Projects/AppleHealthStuff/code/Cardio/applecardiology/researchkit/build/Release-iphoneos",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"DEVELOPMENT=1",
